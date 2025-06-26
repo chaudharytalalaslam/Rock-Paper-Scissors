@@ -46,13 +46,14 @@ const draw = () => {
 
 const playGame = (userChoice) => {
     let compChoice = gencompChoice()
-    let userWin = true;
+    
     updateChoiceImages(userChoice,compChoice)
     if (userChoice === compChoice) {
         draw()
     }
 
     else {
+        let userWin = true;
         
         if (userChoice === "rock") {
             userWin = compChoice === "paper" ? false : true
@@ -65,9 +66,9 @@ const playGame = (userChoice) => {
         else {
             userWin = compChoice === "rock" ? false : true
         }
+        showWinner(userWin, userChoice, compChoice)
     }
 
-    showWinner(userWin, userChoice, compChoice)
 }
 
 
